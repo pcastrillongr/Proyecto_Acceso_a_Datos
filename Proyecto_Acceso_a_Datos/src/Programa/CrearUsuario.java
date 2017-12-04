@@ -31,19 +31,19 @@ public class CrearUsuario {
 	private JTextField txtfechainicio;
 	private JTextField txtlistacodigo;
 	private JTextField txtgruposanguineo;
-	JLabel lblTelefono;
-	JLabel lblNombre;
-	JLabel lblapellido;
-	JLabel lblfechanacimiento;
-	JLabel lbldepartamento;
-	JLabel lblfechainicio;
-	JLabel lblcodigos;
-	JLabel lblGrupoSanguineo;
-	JButton btncodigo;
-	JButton BTNAÑADIR;
-	private JLabel lblNewLabel;
-	Empleado x;
-	ArrayList<Integer> numeros;
+	private JLabel lblTelefono;
+	private JLabel lblNombre;
+	private JLabel lblapellido;
+	private JLabel lblfechanacimiento;
+	private JLabel lbldepartamento;
+	private JLabel lblfechainicio;
+	private JLabel lblcodigos;
+	private JLabel lblGrupoSanguineo;
+	private JButton btncodigo;
+	private JButton btnanhadir;
+	private  JLabel lblNewLabel;
+	private Empleado x;
+	private ArrayList<Integer> numeros;
 	private JButton btnactualizar;
 	private LinkedList<Empleado> empleados;
 	private JLabel lbltelcontacto;
@@ -66,9 +66,9 @@ public class CrearUsuario {
 	private JTextField txteliminar;
 	private JLabel lblNombreContactoA;
 	private JButton btnbuscareliminar;
-	int nespecial;
+	private int nespecial;
 	private Contacto cactualizar;
-
+    
 	/**
 	 * Create the application.
 	 * 
@@ -99,7 +99,7 @@ public class CrearUsuario {
 		txtlistacodigo = new JTextField();
 		txtgruposanguineo = new JTextField();
 		btncodigo = new JButton("ADD");
-		BTNAÑADIR = new JButton("AÑADIR EMPLEADO");
+		btnanhadir = new JButton("ANHADIR EMPLEADO");
 		lblNewLabel = new JLabel("(dd/mm/yyyy)");
 		numeros = new ArrayList<Integer>();
 		empleados = new LinkedList<Empleado>();
@@ -200,11 +200,11 @@ public class CrearUsuario {
 		FRAME_CREAR.getContentPane().add(txtgruposanguineo);
 		txtgruposanguineo.setColumns(10);
 
-		btncodigo.setBounds(565, 81, 61, 24);
+		btncodigo.setBounds(579, 80, 61, 24);
 		FRAME_CREAR.getContentPane().add(btncodigo);
 
-		BTNAÑADIR.setBounds(240, 168, 186, 74);
-		FRAME_CREAR.getContentPane().add(BTNAÑADIR);
+		btnanhadir.setBounds(240, 168, 186, 74);
+		FRAME_CREAR.getContentPane().add(btnanhadir);
 
 		lblNewLabel.setBounds(40, 130, 115, 16);
 		FRAME_CREAR.getContentPane().add(lblNewLabel);
@@ -229,7 +229,7 @@ public class CrearUsuario {
 		lblContactoEspecial.setBounds(30, 360, 130, 16);
 		FRAME_CREAR.getContentPane().add(lblContactoEspecial);
 
-		btnAdd.setBounds(206, 360, 36, 29);
+		btnAdd.setBounds(206, 360, 60, 29);
 		FRAME_CREAR.getContentPane().add(btnAdd);
 
 		btnanhadircontacto.setBounds(80, 401, 186, 74);
@@ -274,7 +274,7 @@ public class CrearUsuario {
 
 		// ENABLED DEPENDIENDO DE LA RESPUESTA TRAIDA DESDE LAS OPCIONES
 
-		if (res == 1)// respuesta para añadir usuario
+		if (res == 1)// respuesta para aÃ±adir usuario
 		{
 			txtempcontacto.setEnabled(false);
 			txttelcontacto.setEnabled(false);
@@ -291,17 +291,18 @@ public class CrearUsuario {
 		}
 		if (res == 2)// respuesta para actualizar usuario
 		{
-			// desactivar añadir usuario
+			// desactivar aÃ±adir usuario
 			txtnombre.setEnabled(false);
 			txtnumero.setEnabled(false);
 			txtapellido.setEnabled(false);
 			txtgruposanguineo.setEnabled(false);
 			txtlistacodigo.setEnabled(false);
 			btncodigo.setEnabled(false);
-			BTNAÑADIR.setEnabled(false);
+			btnanhadir.setEnabled(false);
 			txtfechanacimiento.setEnabled(false);
 			txtdepartamento.setEnabled(false);
 			txtfechainicio.setEnabled(false);
+			btnactualizar.setEnabled(false);
 
 			// desactivar contacto
 
@@ -323,7 +324,7 @@ public class CrearUsuario {
 			txtgruposanguineo.setEnabled(false);
 			txtlistacodigo.setEnabled(false);
 			btncodigo.setEnabled(false);
-			BTNAÑADIR.setEnabled(false);
+			btnanhadir.setEnabled(false);
 			txtfechanacimiento.setEnabled(false);
 			txtdepartamento.setEnabled(false);
 			txtfechainicio.setEnabled(false);
@@ -331,6 +332,7 @@ public class CrearUsuario {
 			btnbuscareliminar.setEnabled(false);
 			txtnbusqueda.setEnabled(false);
 			txtabusqueda.setEnabled(false);
+			btnbuscaremp.setEnabled(false);
 
 		}
 
@@ -342,7 +344,7 @@ public class CrearUsuario {
 			txtgruposanguineo.setEnabled(false);
 			txtlistacodigo.setEnabled(false);
 			btncodigo.setEnabled(false);
-			BTNAÑADIR.setEnabled(false);
+			btnanhadir.setEnabled(false);
 			txtfechanacimiento.setEnabled(false);
 			txtdepartamento.setEnabled(false);
 			txtfechainicio.setEnabled(false);
@@ -365,9 +367,9 @@ public class CrearUsuario {
 
 	private void eventos() {
 
-		// AÑADIR EMPLEADO
+		// AÃ‘ADIR EMPLEADO
 
-		BTNAÑADIR.addActionListener(new ActionListener() {
+		btnanhadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				String errores = "";
@@ -498,7 +500,7 @@ public class CrearUsuario {
 						escorrecto = true;
 					} else {
 						escorrecto = false;
-						errores += "ERROR*No puede asignar un contacto que no esta en la agenda";
+						errores += "No puede asignar un Contacto a un Empleado que no esta en la agenda";
 					}
 				}
 
@@ -506,7 +508,7 @@ public class CrearUsuario {
 
 					cactualizar.setNempleado(txtempcontacto.getText());
 					cactualizar.setNombre(txtncontacto.getText());
-					cactualizar.setTeléfono(Integer.parseInt(txttelcontacto.getText()));
+					cactualizar.settelefono(Integer.parseInt(txttelcontacto.getText()));
 					JOptionPane.showMessageDialog(null, "Contacto Actualizado");
 					OpcionesUsuario go = new OpcionesUsuario();
 					go.getFRAME_OPCIONES().setVisible(true);
@@ -538,9 +540,10 @@ public class CrearUsuario {
 							txttelcontacto.setEnabled(true);
 							txtncontacto.setEnabled(true);
 							txtempcontacto.setEnabled(true);
-							txttelcontacto.setText(String.valueOf(c.getTeléfono()));
+							txttelcontacto.setText(String.valueOf(c.gettelefono()));
 							txtncontacto.setText(c.getNombre());
 							txtempcontacto.setText(c.getNempleado());
+							btnactualizar.setEnabled(true);
 							encuentra = true;
 							btnbuscaremp.setEnabled(false);
 
@@ -632,7 +635,7 @@ public class CrearUsuario {
 						}
 					}
 					if (!aparece) {
-						JOptionPane.showMessageDialog(null, "ERROR *El empleado no aparece en nueatra agenda");
+						JOptionPane.showMessageDialog(null, "ERROR *El empleado no aparece en nuestra agenda");
 					} else {
 
 						if (escorrecto) {

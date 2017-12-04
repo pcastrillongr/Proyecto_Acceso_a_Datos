@@ -2,7 +2,7 @@ package Clases;
 
 public class Contacto {
 	
-	private int teléfono;
+	private int telefono;
 	private String Nombre; 
 	private boolean especial;
 	private String nempleado;
@@ -10,20 +10,20 @@ public class Contacto {
 
 	public Contacto(){}
 	
-	public Contacto(int teléfono, String nombre, boolean especial,String nempleado) {
+	public Contacto(int telefono, String nombre, boolean especial,String nempleado) {
 		super();
-		this.teléfono = teléfono;
+		this.telefono = telefono;
 		Nombre = nombre;
 		this.especial = especial;
 		this.nempleado=nempleado;
 	}
 
-	public int getTeléfono() {
-		return teléfono;
+	public int gettelefono() {
+		return telefono;
 	}
 
-	public void setTeléfono(int teléfono) {
-		this.teléfono = teléfono;
+	public void settelefono(int telefono) {
+		this.telefono = telefono;
 	}
 
 	public String getNombre() {
@@ -44,7 +44,7 @@ public class Contacto {
 
 	@Override
 	public String toString() {
-		return "Contacto [teléfono=" + teléfono + ", Nombre=" + Nombre + ", especial=" + especial + "]";
+		return "Contacto [telefono=" + telefono + ", Nombre=" + Nombre + ", especial=" + especial + "]";
 	}
 	
 	

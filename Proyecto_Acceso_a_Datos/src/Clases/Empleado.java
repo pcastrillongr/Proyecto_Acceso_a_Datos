@@ -7,32 +7,32 @@ import java.util.LinkedList;
 public class Empleado {
 	
 
-private int teléfono;
+private int telefono;
 private String Nombre;
 private String Apellido;
 private String fechanacimiento;
 private String  departamento;
 private String fechainicio;
 private ArrayList<Integer>listacodigos;
-private String Gruposanguíneo;
+private String gruposanguineo;
 private LinkedList<Contacto>listacontactos;
 private int contactoespecial;
 
 public Empleado(){}
 
 
-public Empleado(int teléfono, String nombre, String apellido, String fechanacimiento, String departamento,
-		String fechainicio, ArrayList<Integer> listacodigos, String gruposanguíneo,
+public Empleado(int telefono, String nombre, String apellido, String fechanacimiento, String departamento,
+		String fechainicio, ArrayList<Integer> listacodigos, String gruposanguineo,
 		LinkedList<Contacto> listacontactos,int contactoespecial) {
 	super();
-	this.teléfono = teléfono;
+	this.telefono = telefono;
 	Nombre = nombre;
 	Apellido = apellido;
 	this.fechanacimiento = fechanacimiento;
 	this.departamento = departamento;
 	this.fechainicio = fechainicio;
 	this.listacodigos = listacodigos;
-	Gruposanguíneo = gruposanguíneo;
+	this.gruposanguineo = gruposanguineo;
 	this.listacontactos = new LinkedList<Contacto>();
 	this.contactoespecial=0;
 }
@@ -46,18 +46,18 @@ public void setContactoespecial(int contactoespecial) {
 }
 
 
-public Empleado(int teléfono, String nombre, String apellido, String fechanacimiento, String departamento,
-		String fechainicio, ArrayList<Integer> listacodigos, String gruposanguíneo
+public Empleado(int telefono, String nombre, String apellido, String fechanacimiento, String departamento,
+		String fechainicio, ArrayList<Integer> listacodigos, String gruposanguineo
 	) {
 	super();
-	this.teléfono = teléfono;
+	this.telefono =telefono;
 	Nombre = nombre;
 	Apellido = apellido;
 	this.fechanacimiento = fechanacimiento;
 	this.departamento = departamento;
 	this.fechainicio = fechainicio;
 	this.listacodigos = listacodigos;
-	Gruposanguíneo = gruposanguíneo;
+	this.gruposanguineo = gruposanguineo;
 }
 
 
@@ -73,11 +73,11 @@ public void setListacontactos(LinkedList<Contacto> listacontactos) {
 }
 
 
-public int getTeléfono() {
-	return teléfono;
+public int gettelefono() {
+	return telefono;
 }
-public void setTeléfono(int teléfono) {
-	this.teléfono = teléfono;
+public void settelefono(int telefono) {
+	this.telefono = telefono;
 }
 public String getNombre() {
 	return Nombre;
@@ -115,18 +115,18 @@ public ArrayList<Integer> getListacodigos() {
 public void setListacodigos(ArrayList<Integer> listacodigos) {
 	this.listacodigos = listacodigos;
 }
-public String getGruposanguíneo() {
-	return Gruposanguíneo;
+public String getGruposanguineo() {
+	return gruposanguineo;
 }
-public void setGruposanguíneo(String gruposanguíneo) {
-	Gruposanguíneo = gruposanguíneo;
+public void setgruposanguineo(String gruposanguineo) {
+	this.gruposanguineo = gruposanguineo;
 }
 
 @Override
 public String toString() {
-	return "Empleado [teléfono=" + teléfono + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", fechanacimiento="
+	return "Empleado [teleÌ�fono=" +telefono + ", Nombre=" + Nombre + ", Apellido=" + Apellido + ", fechanacimiento="
 			+ fechanacimiento + ", departamento=" + departamento + ", fechainicio=" + fechainicio + ", listacodigos="
-			+ listacodigos + ", Gruposanguíneo=" + Gruposanguíneo + "]";
+			+ listacodigos + ", GruposanguiÌ�neo=" + gruposanguineo + "]";
 }
 
 
